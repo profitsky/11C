@@ -28,11 +28,14 @@ html{
     color: white;
 
     &__logo{
-        display: flex;
+        display: flex;        
+        margin-top: 11rem;
+        justify-content: space-evenly;
 
         &-letter{
-            display: grid;
-            gap: $cell-size;
+            display: grid;                     
+            gap: 0.5rem;
+            margin: 0 $cell-size;
         }
     }
 
@@ -40,12 +43,18 @@ html{
         text-transform: uppercase;
         font-family: Bahnschrift;
         font-size: 10rem;
+        margin-top: 3rem;
     }
 
     &__contact{
         color: #525252;
         font-family: Calibri;
-        font-size: 3rem;
+        font-size: 5rem;
         letter-spacing: 0.7rem;
+        margin-top: -3.5rem;
     }
+}
+
+.cell{
+    background-color: white;
 }
