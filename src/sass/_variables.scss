@@ -1,0 +1,9 @@
+$grid-cols: 1;
+$grid-rows: 1;
+$cell-size: 1rem;
+
+:export {
+    grid-cols: $grid-cols;
+    grid-rows: $grid-rows;
+    cell-size: $cell-size;
+}

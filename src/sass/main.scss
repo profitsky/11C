@@ -1,0 +1,51 @@
+@import "/src/sass/variables";
+
+@font-face { font-family: Calibri; src: url("/src/fonts/calibri.ttf"); }
+@font-face { font-family: Bahnschrift; src: url("/src/fonts/bahnschrift.ttf"); }
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    z-index: 0;   
+    user-select: none;
+}
+
+body{
+    background-color: #272727;
+}
+
+html{
+    font-size: 10px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    &__logo{
+        display: flex;
+
+        &-letter{
+            display: grid;
+            gap: $cell-size;
+        }
+    }
+
+    &__description{
+        text-transform: uppercase;
+        font-family: Bahnschrift;
+        font-size: 10rem;
+    }
+
+    &__contact{
+        color: #525252;
+        font-family: Calibri;
+        font-size: 3rem;
+        letter-spacing: 0.7rem;
+    }
+}

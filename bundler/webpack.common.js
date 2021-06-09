@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   mode: "none",
   entry: {
-    main: "./src/index.js",
+    main: "./src/App.js",
   },
   output: {
     filename: "js/[contenthash:6].[name]-bundle.js",
