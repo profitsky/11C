@@ -4,6 +4,7 @@ export class Sentence{
         this.sentence = sentence;
         this.logoWrapper = logoWrapper;
         this.character = new Character();
+        this.index = 0;
     };
 
     generateLogo(){
@@ -14,81 +15,37 @@ export class Sentence{
     };
 
     visualEffect(){
-        const logoLetterWrapper = document.querySelectorAll(".main-container__logo-letter")
-            Array.from(this.sentence).forEach((cell, index) => {            
-            this.addActiveClass(logoLetterWrapper[index].querySelectorAll(".cell"))
-        })      
+       
+        const logoLetterWrapper = document.querySelectorAll(".main-container__logo-letter");
+        this.addActiveClass(logoLetterWrapper[this.index].querySelectorAll(".cell"));
+
+        const interval = setInterval(()=>{
+            this.index++;
+            if(this.index < Array.from(this.sentence).length){
+            this.addActiveClass(logoLetterWrapper[this.index].querySelectorAll(".cell"))
+            }            
+            else{
+                clearInterval(interval)
+            };
+        },200)
     };
 
-    
-
     addActiveClass(wrapper){
+        let randomNumber = null;
+        const randomNubersArray = []; 
 
-            wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
+        wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
+        setInterval(()=>{
+            do {randomNumber = Math.floor(Math.random()*wrapper.length)
+            } while (randomNubersArray.includes(randomNumber));
 
-            setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },200)
-
-            setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },400)
-
-            setTimeout(()=> {
-            wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },600)
+            randomNubersArray.push(randomNumber);
+            wrapper[randomNumber].classList.add("cell--active");
 
             setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },800)
-
-            setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },1000)
-
-            setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },1200)
-
-            setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },1400)
-
-            setInterval(() => {
-                wrapper.forEach((element) =>{
-                    element.classList.remove("cell--active")
-                })
-
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-
-                 setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },200)
-
-            setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },400)
-
-            setTimeout(()=> {
-            wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },600)
-
-            setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },800)
-
-            setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },1000)
-
-            setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },1200)
-
-            setTimeout(()=> {
-                wrapper[Math.floor(Math.random()*wrapper.length)].classList.add("cell--active");
-            },1400)
-                
-            }, 2250);
+                wrapper[randomNubersArray[0]].classList.remove("cell--active");
+                randomNubersArray.shift();
+            },1500) 
+        },100)        
     };
 };

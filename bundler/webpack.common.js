@@ -39,10 +39,10 @@ module.exports = {
           use: [
             {
               loader: "file-loader",
-              options: {
-                name: "[name].[ext]",
-                outputPath: path.resolve(__dirname, "../", "dist/fonts")
-              }
+              // options: {
+              //   name: "[name].[ext]",
+              //   outputPath: path.resolve(__dirname, "../", "dist/")
+              // }
             }
           ]
         },
