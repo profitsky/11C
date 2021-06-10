@@ -10,6 +10,8 @@ class App{
 
     start(){
         this.sentence.generateLogo();
+        this.sentence.visualEffect();
+        
     };
 };
 
