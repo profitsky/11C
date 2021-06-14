@@ -1,0 +1,35 @@
+.contact{ 
+    width: 40%;
+    height: 50rem;
+    margin: -6rem auto 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: -1;
+
+    &__horizontal-frame{
+        content: "";
+        position: absolute;
+        height: 0.2rem;
+        width: 100%;
+        background-color: #525252;
+        transform: scaleX(0);        
+
+        &--active{
+            animation: animateFrame 0.5s forwards;
+        }
+    }
+
+    &__overflow{
+        width: 100%;
+        height: 100%;
+        border: 0.2rem solid #525252;
+        position: absolute;
+        top: 0;
+        transform: translateY(-100%);
+
+
+        &--active{
+            animation: animateFadeOut 0.5s forwards;
+        }
+    }
+};

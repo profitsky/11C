@@ -19,30 +19,17 @@ module.exports = {
         {
           test: /\.s[ac]|c]ss$/i,
           use: [MiniCSSExtractPlugin.loader, "css-loader", "postcss-loader", "sass-loader" ]
-        },
-        
-        {
-          test: /\.(jpg|png|svg|gif|jpeg)$/,
-          use: [
-            {
-              loader: "file-loader",
-              options: {
-                name: "[name].[ext]",
-                outputPath: "images"
-              }
-            }
-          ]
-        },
+        }, 
 
         { 
           test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
           use: [
             {
               loader: "file-loader",
-              // options: {
-              //   name: "[name].[ext]",
-              //   outputPath: path.resolve(__dirname, "../", "dist/")
-              // }
+              options: {
+                name: "[name].[ext]",
+                outputPath: "fonts"
+              }
             }
           ]
         },
@@ -57,20 +44,12 @@ module.exports = {
         },
       ]
     },
-
-  
   
    plugins: [  
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../src/template.html"),
       minify: true 
-    }),   
-
-    // new CopyWebpackPlugin({
-    //         patterns: [
-    //             { from: path.resolve(__dirname, "../static") }
-    //         ]           
-    //     }),
+    }),
         
     new MiniCSSExtractPlugin({
       filename: "[name].[contenthash:6].css"

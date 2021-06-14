@@ -47,5 +47,5 @@ export class Sentence{
                 randomNubersArray.shift();
             },1500) 
         },100)        
-    };
+    };   
 };
