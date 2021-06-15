@@ -2,13 +2,14 @@
     cursor: pointer;
 
     &--email{
-       color: white;
-       font-size: 10rem;
+       color: #525252;
+       font-size: 8rem;
        font-weight: lighter;
        transition: all 0.2s;
+       transform-origin: top;   
 
        &:hover{
-           color: #525252;
+           color: white;          
        }
     }
 
@@ -16,5 +17,24 @@
         transform-origin: top;
         transform: scaleX(0);
         opacity: 0;      
+    }
+
+    &--send{
+        border: none;
+        display: block;
+        padding: 0.7rem 3.5rem;
+        cursor: pointer;
+        outline: none;
+        background-color: white;
+        font-size: 1.8rem;
+        margin: 0 auto;
+        border-radius: 0.2rem;
+        transition: 0.1s;
+
+        &:hover{
+            color: gray;
+        }
+
+        
     }
 }

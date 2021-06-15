@@ -2,12 +2,12 @@
 @import "/src/sass/animations";
 @import "/src/sass/buttons";
 @import "/src/sass/contact";
+@import "/src/sass/typology";
 
 @font-face { font-family: Calibri; src: url("/src/fonts/calibri.ttf"); }
 @font-face { font-family: Bahnschrift; src: url("/src/fonts/bahnschrift.ttf"); }
 
 *,
-body,
 *::after,
 *::before {
   box-sizing: border-box;
@@ -19,6 +19,11 @@ body,
 
 body{
     background-color: #272727;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
 }
 
 html{
@@ -33,7 +38,7 @@ html{
     
     &__logo{
         display: flex;        
-        margin-top: 6rem;
+        margin-top: 5rem;
         justify-content: space-evenly;
 
         &-letter{

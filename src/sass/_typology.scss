@@ -1,0 +1,27 @@
+.heading{
+    color: #525252;
+    font-family: Calibri;
+    
+    &--primary{
+        width: 100%;
+        font-size: 4rem;
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    &--secondary{
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 3rem;
+        font-size: 1.8rem;
+        padding: 0 1rem;
+        display: block;
+        transition: all 0.5s;
+        pointer-events: none;
+    }
+
+    &--tertiary{
+        font-size: 1.5rem;
+    }
+}
