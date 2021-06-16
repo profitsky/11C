@@ -1,74 +1,12 @@
 @import "/src/sass/variables";
+@import "/src/sass/mixins";
+@import "/src/sass/base";
+@import "/src/sass/mainContainer";
 @import "/src/sass/animations";
 @import "/src/sass/buttons";
 @import "/src/sass/contact";
 @import "/src/sass/typology";
 
+
 @font-face { font-family: Calibri; src: url("/src/fonts/calibri.ttf"); }
 @font-face { font-family: Bahnschrift; src: url("/src/fonts/bahnschrift.ttf"); }
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    z-index: 0;   
-    user-select: none;
-}
-
-body{
-    background-color: #272727;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    min-height: 100vh;
-}
-
-html{
-    font-size: 62.5%;
-}
-
-.main-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    
-    &__logo{
-        display: flex;        
-        margin-top: 5rem;
-        justify-content: space-evenly;
-
-        &-letter{
-            display: grid;                     
-            gap: 0.5rem;
-            margin: 0 $cell-size;
-        }
-    }
-
-    &__description{
-        text-transform: uppercase;
-        font-family: Bahnschrift;
-        font-size: 8rem;
-        margin-top: 2rem;
-    }
-
-    &__button{
-        margin-top: -2rem;
-    }
-}
-
-.cell{
-    background-color: white;
-    transition: all .8s ease;
-    backface-visibility: hidden;
-    overflow: hidden;
-    perspective: 150rem;
-
-    &--active{        
-        animation: animatePixels 1.5s linear;
-        background-color: white;
-    }    
-}

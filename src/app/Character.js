@@ -17,7 +17,7 @@ export class Character{
     constructor(){
         this.letterCellNumber = 49;
         this.digitCellNumber = 42;
-        this.cellSize = "2.8rem";
+        this.cellSize = "2rem";
     };
 
     render(char){

@@ -45,6 +45,16 @@
     }
 }
 
+@keyframes animateFrameIn{
+    0% {
+      transform: scaleX(1) scaleY(1)
+    }
+
+    100% {      
+      transform: scaleX(0) scaleY(8)
+    }
+}
+
 @keyframes animateFadeOut{
     0% {
       transform: translateY(-110%);
@@ -53,5 +63,16 @@
 
     100% {
       transform: translateY(0%);
+    }
+}
+
+@keyframes animateFadeIn{
+    0% {
+      transform: translateY(0%);
+
+    }
+
+    100% {
+      transform: translateY(-110%);
     }
 }

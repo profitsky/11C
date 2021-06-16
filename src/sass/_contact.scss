@@ -1,16 +1,28 @@
 .contact{    
-    width: 40%;
-    height: 50rem;
+    width: 36%;
+    height: 50%;
     margin: -6rem auto 0 auto;
     position: relative;
     overflow: hidden;
     z-index: -1;
+
+    @include respond(tab-port){
+        width: 65%;
+    }
+
+    @include respond(phone){
+        width: 80%;
+    }
 
     &__row{
         position: relative;
         width: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+
+        @include respond(phone){
+            grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+        }
     }
 
     &__column{
@@ -18,13 +30,17 @@
         width: 100%;
         padding: 0 1rem;
         margin: 3rem 0 1rem;
-        transition: all 0.5s;
+        transition: all 0.5s;    
     }
 
     &__inputBox{
         position: relative;
         width: 100%;
         height: 4rem;
+
+        @include respond(phone){
+            height: 6rem;
+        }
     }
 
     &__input{
@@ -35,14 +51,18 @@
         box-shadow: none;
         border: none;
         outline: none;
-        font-size: 1.8rem;
+        font-size: 2rem;
         padding: 0 1rem;
         z-index: 1;
         color: white;
 
+        @include respond(phone){
+            font-size: 4rem;
+        }
+
         &:focus + .heading--secondary,
         &:valid + .heading--secondary{
-            top: -3.5rem;
+            top: -2.5rem;
             left: -1rem;
             color: white;
         }
@@ -56,29 +76,40 @@
     &__textBox{
         position: relative;
         width: 100%;
-        height: 10rem;
-        padding: 1rem 0;
+        height: 11rem;
+
+        @include respond(tab-port){
+            height: 20rem;
+        }
+
+        @include respond(phone){
+            height: 12rem;
+        }
 
         &-textarea{
-            position: absolute;            
+            position: absolute;                  
             width: 100%;
             height: 100%;
             background: transparent;
             box-shadow: none;
             border: none;
             outline: none;
-            font-size: 1.8rem;
+            font-size: 2rem;
             padding: 0 1rem;
             z-index: 1;
             color: white;
             resize: none;
 
+            @include respond(phone){
+                font-size: 4rem;
+            }
+
             &:focus + .heading--secondary,
             &:valid + .heading--secondary{
-            top: -3.5rem;
+            top: -2.5rem;
             left: -1rem;
             color: white;
-        }   
+            }   
 
             &:focus ~ .contact__line,
             &:valid ~ .contact__line{
@@ -106,9 +137,7 @@
         align-items: center;
         position: absolute;
         right: 1.5rem;
-      
     }
-
    
     &__horizontal-frame{
         content: "";
@@ -121,6 +150,10 @@
         &--active{
             animation: animateFrame 0.5s 0.5s forwards;
         }
+
+        &--deActive{
+            animation: animateFrameIn 0.5s forwards;
+        }
     }
 
     &__overflow{        
@@ -132,6 +165,10 @@
 
         &--active{
             animation: animateFadeOut 0.5s forwards;
+        }
+
+        &--deActive{
+            animation: animateFadeIn 0.5s forwards;
         }
     }
 };

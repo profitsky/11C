@@ -19,6 +19,12 @@
         opacity: 0;      
     }
 
+    &--UnPressed{
+        transform-origin: top;
+        transform: scaleX(1);
+        opacity: 1;      
+    }
+
     &--send{
         border: none;
         display: block;
@@ -30,11 +36,8 @@
         margin: 0 auto;
         border-radius: 0.2rem;
         transition: 0.1s;
-
         &:hover{
             color: gray;
         }
-
-        
     }
 }
